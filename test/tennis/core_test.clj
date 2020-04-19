@@ -7,4 +7,6 @@
     (is (= "Fifteen-Love" (score 1 0)))
     (is (= "Love-Fifteen" (score 0 1)))
     (is (= "Thirty-Love" (score 2 0)))
+    (is (= "Love-Thirty" (score 0 2)))
+    (is (= "Forty-Love" (score 3 0)))
            ))
