@@ -16,5 +16,7 @@
                   (is (= "Love-All" (score 0 0)))
                   (is (= "Fifteen-All" (score 1 1)))
                   (is (= "Thirty-All" (score 2 2)))
+                  (is (= "Deuce" (score 3 3)))
+                  (is (= "Deuce" (score 4 4)))
                   )
          )
