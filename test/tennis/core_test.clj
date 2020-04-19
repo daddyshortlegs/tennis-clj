@@ -28,6 +28,9 @@
                   (is (= "Win for player 2" (score 1 4)))
                   (is (= "Win for player 1" (score 4 2)))
                   (is (= "Win for player 2" (score 2 4)))
+                  )
 
+         (testing "advantage"
+                  (is (= "Advantage player 1" (score 4 3)))
                   )
          )
