@@ -6,5 +6,5 @@
   (testing "tennis scores"
     (is (= "Fifteen-Love" (score 1 0)))
     (is (= "Love-Fifteen" (score 0 1)))
-    ;(is (= "Thirty-Love" (score 2 0)))
+    (is (= "Thirty-Love" (score 2 0)))
            ))

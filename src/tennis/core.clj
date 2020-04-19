@@ -2,10 +2,11 @@
     (:gen-class))
 
 (defn calc-score [points]
-      (if (= points 1)
-        "Fifteen"
-        "Love"
-        )
+      (let [scores {0 "Love"
+                    1 "Fifteen"
+                    2 "Thirty"}]
+           (get scores points)
+           )
       )
 
 (defn score [p1points p2points]
