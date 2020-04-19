@@ -29,6 +29,10 @@
       (and (>= p1points 4) (= 1 (- p1points p2points)))
       )
 
+(defn is-advantage-player2? [p1points p2points]
+      (and (>= p2points 4) (= 1 (- p2points p1points)))
+      )
+
 (defn score [p1points p2points]
       (let [p1score (calc-score p1points)
             p2score (calc-score p2points)
@@ -36,6 +40,7 @@
 
            (cond
              (is-advantage-player1? p1points p2points) "Advantage player 1"
+             (is-advantage-player2? p1points p2points) "Advantage player 2"
              (is-win-player1? p1points p2points) "Win for player 1"
              (is-win-player2? p1points p2points) "Win for player 2"
              (= p1score p2score) (deuce-or-all p1score p1points)
