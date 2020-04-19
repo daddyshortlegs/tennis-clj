@@ -22,11 +22,12 @@
             p2score (calc-score p2points)
             ]
 
-           (if (= p1score p2score)
-             (deuce-or-all p1score p1points)
-             (str p1score "-" p2score)
-             )
+           (cond
+             (and (= 4 p1points) (> p1points p2points)) "Win for player 1"
+             (= p1score p2score) (deuce-or-all p1score p1points)
+             :else (str p1score "-" p2score)
 
+             )
 
            )
       )

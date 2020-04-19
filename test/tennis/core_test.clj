@@ -19,4 +19,8 @@
                   (is (= "Deuce" (score 3 3)))
                   (is (= "Deuce" (score 4 4)))
                   )
+
+
+         (testing "winner"
+                  (is (= "Win for player 1" (score 4 0))))
          )
