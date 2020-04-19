@@ -26,7 +26,7 @@
       )
 
 (defn is-advantage-player1? [p1points p2points]
-      (and (= 4 p1points) (= 1 (- p1points p2points)))
+      (and (>= p1points 4) (= 1 (- p1points p2points)))
       )
 
 (defn score [p1points p2points]
