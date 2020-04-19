@@ -20,6 +20,6 @@
              (str p1score "-" p2score)
              )
 
-           
+
            )
       )
