@@ -25,12 +25,16 @@
       (and (= 4 p2points) (not= p1points p2points))
       )
 
+(defn winning-player [p1points p2points]
+      (if (> p1points p2points) "1" "2")
+      )
+
 (defn is-advantage-player1? [p1points p2points]
-      (and (>= p1points 4) (= 1 (- p1points p2points)))
+      (and (>= (max p1points p2points) 4) (= 1 (- p1points p2points)))
       )
 
 (defn is-advantage-player2? [p1points p2points]
-      (and (>= p2points 4) (= 1 (- p2points p1points)))
+      (and (>= (max p1points p2points) 4) (= 1 (- p2points p1points)))
       )
 
 (defn score [p1points p2points]
@@ -39,8 +43,8 @@
             ]
 
            (cond
-             (is-advantage-player1? p1points p2points) "Advantage player 1"
-             (is-advantage-player2? p1points p2points) "Advantage player 2"
+             (is-advantage-player1? p1points p2points) (str "Advantage player " (winning-player p1points p2points))
+             (is-advantage-player2? p1points p2points) (str "Advantage player " (winning-player p1points p2points))
              (is-win-player1? p1points p2points) "Win for player 1"
              (is-win-player2? p1points p2points) "Win for player 2"
              (= p1score p2score) (deuce-or-all p1score p1points)
