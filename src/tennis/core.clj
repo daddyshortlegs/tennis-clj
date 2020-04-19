@@ -15,7 +15,11 @@
             p2score (calc-score p2points)
             ]
 
-           (str p1score "-" p2score)
-           )
+           (if (= p1score p2score)
+             (str p1score "-All")
+             (str p1score "-" p2score)
+             )
 
+           
+           )
       )
