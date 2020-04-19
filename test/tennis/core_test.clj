@@ -24,6 +24,10 @@
          (testing "winner"
                   (is (= "Win for player 1" (score 4 0)))
                   (is (= "Win for player 2" (score 0 4)))
+                  (is (= "Win for player 1" (score 4 1)))
+                  (is (= "Win for player 2" (score 1 4)))
+                  (is (= "Win for player 1" (score 4 2)))
+                  (is (= "Win for player 2" (score 2 4)))
 
                   )
          )
