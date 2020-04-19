@@ -17,13 +17,17 @@
         )
       )
 
+(defn is-win? [p1points p2points]
+      (and (= 4 p1points) (> p1points p2points))
+      )
+
 (defn score [p1points p2points]
       (let [p1score (calc-score p1points)
             p2score (calc-score p2points)
             ]
 
            (cond
-             (and (= 4 p1points) (> p1points p2points)) "Win for player 1"
+             (is-win? p1points p2points) "Win for player 1"
              (= p1score p2score) (deuce-or-all p1score p1points)
              :else (str p1score "-" p2score)
 
