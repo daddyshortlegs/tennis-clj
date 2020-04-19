@@ -17,8 +17,12 @@
         )
       )
 
-(defn is-win? [p1points p2points]
+(defn is-win-player1? [p1points p2points]
       (and (= 4 p1points) (> p1points p2points))
+      )
+
+(defn is-win-player2? [p1points p2points]
+      (and (= 4 p2points) (> p2points p1points))
       )
 
 (defn score [p1points p2points]
@@ -27,7 +31,8 @@
             ]
 
            (cond
-             (is-win? p1points p2points) "Win for player 1"
+             (is-win-player1? p1points p2points) "Win for player 1"
+             (is-win-player2? p1points p2points) "Win for player 2"
              (= p1score p2score) (deuce-or-all p1score p1points)
              :else (str p1score "-" p2score)
 

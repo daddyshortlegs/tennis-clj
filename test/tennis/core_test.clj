@@ -23,7 +23,7 @@
 
          (testing "winner"
                   (is (= "Win for player 1" (score 4 0)))
-                  ;(is (= "Win for player 2" (score 0 4)))
+                  (is (= "Win for player 2" (score 0 4)))
 
                   )
          )
