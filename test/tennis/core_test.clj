@@ -34,5 +34,6 @@
                   (is (= "Advantage player 1" (score 4 3)))
                   (is (= "Advantage player 1" (score 8 7)))
                   (is (= "Advantage player 2" (score 3 4)))
+                  (is (= "Advantage player 2" (score 7 8)))
                   )
          )
