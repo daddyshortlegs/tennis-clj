@@ -5,8 +5,8 @@
       (get {0 "Love", 1 "Fifteen", 2 "Thirty" 3 "Forty"} points)
       )
 
-(defn deuce-or-all [p1score p1points]
-      (if (>= p1points 3) "Deuce" (str p1score "-All"))
+(defn deuce-or-all [p1points]
+      (if (>= p1points 3) "Deuce" (str (calc-score p1points) "-All"))
       )
 
 (defn is-win? [p1points p2points]
@@ -22,14 +22,12 @@
       )
 
 (defn score [p1points p2points]
-      (let [p1score (calc-score p1points)
-            p2score (calc-score p2points)
-            leader (winning-player p1points p2points)]
+      (let [leader (winning-player p1points p2points)]
            (cond
              (is-advantage? p1points p2points) (str "Advantage player " leader)
              (is-win? p1points p2points) (str "Win for player " leader)
-             (= p1points p2points) (deuce-or-all p1score p1points)
-             :else (str p1score "-" p2score)
+             (= p1points p2points) (deuce-or-all p1points)
+             :else (str (calc-score p1points) "-" (calc-score p2points))
              )
            )
       )
