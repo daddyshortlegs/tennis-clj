@@ -23,11 +23,11 @@
 
 (defn score [p1points p2points]
       (let [p1score (calc-score p1points)
-            p2score (calc-score p2points)]
-
+            p2score (calc-score p2points)
+            leader (winning-player p1points p2points)]
            (cond
-             (is-advantage? p1points p2points) (str "Advantage player " (winning-player p1points p2points))
-             (is-win? p1points p2points) (str "Win for player " (winning-player p1points p2points))
+             (is-advantage? p1points p2points) (str "Advantage player " leader)
+             (is-win? p1points p2points) (str "Win for player " leader)
              (= p1points p2points) (deuce-or-all p1score p1points)
              :else (str p1score "-" p2score)
              )
