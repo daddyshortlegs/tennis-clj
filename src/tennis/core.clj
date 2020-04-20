@@ -10,7 +10,7 @@
       )
 
 (defn is-win? [p1points p2points]
-      (and (= 4 (max p1points p2points)) (not= p1points p2points))
+      (and (>= (max p1points p2points) 4) (not= p1points p2points))
       )
 
 (defn winning-player [p1points p2points]
